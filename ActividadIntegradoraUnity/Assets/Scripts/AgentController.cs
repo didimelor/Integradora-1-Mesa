@@ -17,15 +17,24 @@ public class AgentController : MonoBehaviour
     [SerializeField] GameObject carPrefab;
     [SerializeField] float updateDelay;
 
+    [SerializeField] GameObject floorPrefab;
+    [SerializeField] float floorPrefabScaleX; 
+    [SerializeField] float floorPrefabScaleZ;
 
     GameObject[] cars;
     CarAgent agents;
+    GameObject floor;
     float updateTime = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //Floor instantiation
+        floor = Instantiate(floorPrefab, Vector3.zero, Quaternion.identity);
+        Vector3 floorScale = new Vector3(floorPrefabScaleX, 1f, floorPrefabScaleZ);
+        floor.transform.localScale = floorScale;
+        
         cars = new GameObject[numAgents];
         for(int i = 0; i < numAgents; i++){
             cars[i] = Instantiate(carPrefab, Vector3.zero, Quaternion.identity);
