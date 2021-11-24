@@ -94,6 +94,7 @@ class Robot(Agent):
             print("Going back to explore!")
 
         elif (self.hasBox and self.pos != self.target):
+            print("going to b")
             self.move2Base()
 
         else:
