@@ -89,6 +89,7 @@ class cargador(Agent):
 				if(not self.hayCajaObs(i) and i in possible_steps):
 					print(i)
 					self.model.grid.move_agent(self, i)
+					self.miCaja.model.grid.move_agent(self.miCaja, i)
 					break
 
 		self.directions = []
@@ -97,7 +98,7 @@ class cargador(Agent):
 	def hayCaja(self, i):
 		for j in self.model.grid.get_cell_list_contents(i):
 			if(isinstance(j, caja)):
-				self.miCaja = caja
+				self.miCaja = j
 				self.tieneCaja = True
 				return True
 		return False
@@ -105,8 +106,11 @@ class cargador(Agent):
 	def step(self):
 		if(self.tieneCaja == False):
 			if(self.hayCaja(self.pos)):
-				print("cae apenas")
 				self.moveConCaja()
+				if(self.pos == self.base):
+					self.miCaja = None
+					self.tieneCaja = False
+					self.moveRandom()
 			else:
 				self.moveRandom()
 		else:
@@ -117,10 +121,6 @@ class caja(Agent):
 	def __init__(self, pos, model):
 		super().__init__(pos, model)
 		self.pos = pos
-
-	def moveWithChar(self, pos):
-		self.pos = pos
-		self.model.grid.move_agent(self, pos)
 
 	def step(self):
 		pass
