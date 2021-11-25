@@ -6,9 +6,9 @@ ___
 #### Descripción del Reto: 
 Este proyecto utiliza Mesa para el modelado multiagente .
 ___
-#### Agentes Involucrados: 
+#### Comportamiento de Agentes Involucrados: 
 * Robots - Cargadores de cajas: 
-  > El semáforo se encuentra en rojo &rarr; Quedarse en el mismo lugar 
+  > El agente tiene caja y esta en la base &rarr; La deja en la base y busca una nueva
   
   > Hay un coche en la dirección en la que se dirije  &rarr; Quedarse en el mismo lugar 
   
