@@ -10,12 +10,15 @@ ___
 * Robots - Cargadores de cajas: 
   > El agente tiene caja y esta en la base &rarr; La deja en la base y busca una nueva
   
-  > Hay un coche en la dirección en la que se dirije  &rarr; Quedarse en el mismo lugar 
+  > Tiene caja  &rarr; Avanza a la base
   
-  > Hay un obstáculo en la dirección en la que se dirije  &rarr; Moverse hacia la dirección de la calle y "rodearlo" siempre intentando regresar a la dirección que lo lleve al destino.
+  > Hay una caja en la misma celda y aun no tiene caja  &rarr; Se le asigna la caja y se dirije a la base.
   
-  > Iteraciones intentando ir a la dirección deseada se excedieron -> ir a dirección random.
+  > No tiene caja y aún no sabe donde hay cajas en el grid -> Se mueve random hasta encontrar una caja a sus alrededores
+  
+  > No tiene caja y llegó a donde creía que hay una caja (Se le llevo otro robot) &rarr; Recalcula el camino hacia otra caja
+  
 * Cajas:
-> Pasó el tiempo máximo en estado rojo &rarr; Se cambia a estado verde
+  >  &rarr; Se cambia a estado verde
 ___
 #### Unity: 
