@@ -30,7 +30,16 @@ ___
 
 Se itera por la lista de direcciones, se mueve el agente a la primera posición en donde no haya obstáculo.
 ___
-#### Optimizaciones implementadas: 
-  > Al inicio, el robot se mueve de forma random checando si a sus alrededores hay cajas, guarda las posiciones en un diccionario que tiene como llave la posición y el valor es "obs" si hay caja y "free" si no hay. Si detecta una caja en possible_steps y no tiene caja actualmente, se mueve a esa posición. Si tiene una caja sólo guarda en el diccionario que ahí hay una. 
-___
 #### Unity: 
+#### ¿Cómo funciona?
+Para esta parte, lo primero que se hace es instanciar todo el ambiente (paredes, piso, agentes y cajas) de acuerdo a los parámetros dados en el editor de Unity. Una vez que se tiene todo configurado, se le mandan los parámetros al modelo de Python por medio de un web request de Unity. Una vez con el los parámetros dados, se reciben las posiciones iniciales del modelo para empezar a correrlo, éstos se reciben por medio de los endpoints en el servidor de Flask.
+
+De igual manera, cada llamada del update hace un request a los diferentes endpoints del servidor de Flask, que reportan las posiciones de los agentes, así como el estado de la simulación. En base a esta información, representan los movimientos dentro de Unity por medio de cambios en el transform.position de cada agente (robots y cajas), para los robots también se toma en cuenta a qué dirección se dirige para rotarlos hacia donde van.
+
+#### Mejoras
+Una de las mejoras que se puede hacer a esta parte es la interpolación de los movimientos, para que no se vea tan irreal, pues con la implementación actual hay ocasiones donde la interpolación se realiza entre las posiciones de dos agentes diferentes, gracias a la manera en la que se va iterando sobre el grid para obtener sus posiciones y la manera en la que se les asignan a las instancias de los robots y las cajas.
+
+Por otro lado, se pueden poner animaciones a los robots para cuando recogen las cajas, que las tengan sobre ellos, por ejemplo, así como subir la coordenada en Y de las cajas para que concuerden con la animación de cargar. Sobre el mismo tema, la animación de caminar se podría ajustar a la par de la interpolación para dar una mejor ilusión de movimiento.
+
+
+Otros detalles que se pueden agregar, pero que no son vitales podrían ser: agregar una pantalla de finalización que contenga los datos generados durante el tiempo de ejecución del modelo (sugerencia del profe Gil), tener la opción de seguir a distintos robots con otras cámaras, detallar más la escena para dar una mejor apariencia de acuerdo a la temática (almacén, calle, casa, etc.).
