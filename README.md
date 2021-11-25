@@ -19,6 +19,6 @@ ___
   > No tiene caja y llegó a donde creía que hay una caja (Se le llevo otro robot) &rarr; Recalcula el camino hacia otra caja
   
 * Cajas:
-  >  &rarr; Se cambia a estado verde
+  >  Si su posicion es la base &rarr; Cambia su estado a "base"
 ___
 #### Unity: 
