@@ -152,7 +152,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -265,16 +265,18 @@ MonoBehaviour:
   updateEP: /update
   agentsEP: /getAgents
   boxesEP: /getObstacles
-  density: 0.01
+  stateEP: /getModelState
+  density: 0.06
   numberRobots: 5
   baseX: 0
   baseZ: 0
-  updateDelay: 0.5
+  updateDelay: 1
   floorWidth: 20
   floorHeight: 20
   carPrefab: {fileID: 3541754002163558908, guid: 592ccdf551af02743a8b0a8284193192, type: 3}
   floorPrefab: {fileID: 1617994159996485068, guid: e88826189c427734a9eecd7b81dd8f8c, type: 3}
   BoxPrefab: {fileID: 4706718759131063045, guid: 11d38812c55cfb748b82e196e967dfc8, type: 3}
+  WallPrefab: {fileID: 3140078516258012687, guid: 928aec5a52e4d5545b0f88afa2e120af, type: 3}
   MainCamera: {fileID: 963194227}
   timer: 0
   dt: 0
@@ -354,10 +356,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 4.5, y: 10, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}

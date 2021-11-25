@@ -8,6 +8,8 @@ from agent import caja, cargador
 
 class FloorTiles(Model):
 
+    isDone = False
+    
     def __init__(self, height=100, width=100, density=0.65, numberCargadores=1, basex = 0, basey = 0):
 
         super().__init__()
@@ -25,7 +27,7 @@ class FloorTiles(Model):
             self.grid.place_agent(char, (xpos, ypos))
 
         for (contents, x, y) in self.grid.coord_iter():
-            agent = caja((x, y), self)
+            agent = caja((x, y), (basex, basey), self)
             if self.random.random() < density:
                 self.schedule.add(agent)
                 self.grid.place_agent(agent, (x, y))
@@ -33,9 +35,15 @@ class FloorTiles(Model):
 
     def step(self):
         self.schedule.step()
+        print(self.count_type())
         if self.count_type() == 0:
             self.running = False
-            print("All boxes collected")
+            self.isDone = True
+
+    def getState(self):
+        if self.isDone == True:
+            print("Model is done")
+        return self.isDone
 
     def count_type(self):
         count = 0

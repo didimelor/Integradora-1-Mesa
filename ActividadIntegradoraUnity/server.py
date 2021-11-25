@@ -73,6 +73,13 @@ def updateModel():
         counter += 1
         return jsonify({'message':f'Model updated to step {counter}.', 'currentStep':counter})
 
+@app.route('/getModelState', methods=['GET'])
+def getState():
+    global trafficModel
+    if request.method == 'GET':
+        state = trafficModel.getState()
+        return jsonify({'isDone':state})
+
 """ if __name__=='__main__':
     app.run(host="localhost", port=8585, debug=True) """
 
