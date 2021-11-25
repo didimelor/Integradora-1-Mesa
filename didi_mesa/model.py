@@ -25,7 +25,7 @@ class FloorTiles(Model):
             self.grid.place_agent(char, (xpos, ypos))
 
         for (contents, x, y) in self.grid.coord_iter():
-            agent = caja((x, y), self)
+            agent = caja((x, y), (basex, basey), self)
             if self.random.random() < density:
                 self.schedule.add(agent)
                 self.grid.place_agent(agent, (x, y))
