@@ -28,6 +28,6 @@ ___
 
 ![This is an image](https://github.com/didimelor/Integradora-1-Mesa/blob/main/(-1%2C0).png)
 
-
+Se itera por la lista de direcciones, se mueve el agente a la primera posición en donde no haya obstáculo.
 ___
 #### Unity: 
