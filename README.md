@@ -30,4 +30,7 @@ ___
 
 Se itera por la lista de direcciones, se mueve el agente a la primera posición en donde no haya obstáculo.
 ___
+#### Optimizaciones implementadas: 
+  > Al inicio, el robot se mueve de forma random checando si a sus alrededores hay cajas, guarda las posiciones en un diccionario que tiene como llave la posición y el valor es "obs" si hay caja y "free" si no hay. Si detecta una caja en possible_steps y no tiene caja actualmente, se mueve a esa posición. Si tiene una caja sólo guarda en el diccionario que ahí hay una. 
+___
 #### Unity: 
