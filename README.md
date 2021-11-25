@@ -24,5 +24,6 @@ ___
 #### ¿Cómo se calcula la ruta para el robot?: 
   > Cada robot tiene como atributo la posición de la base. En la función move con caja se calcula la distancia hacia "x" y "y", si ambas distancias son cero significa que llegó al lugar. Si no, se crea una lista de prioridad llamada directions. La primera posición es dirijirse a la dirección que le quede más distancia por recorrer, por ende, la última prioridad es dirijirse al lado contrario. El indice uno es dirijirse a la dirección a donde quede menos distancia y el indice dos es el lado contario de la dirección a donde quede menos distancia. 
 Ejemplo: 
+![This is an image](https://github.com/didimelor/Integradora-1-Mesa/)
 ___
 #### Unity: 
