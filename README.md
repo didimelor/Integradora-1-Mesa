@@ -21,4 +21,7 @@ ___
 * Cajas:
   >  Si su posicion es la base &rarr; Cambia su estado a "base"
 ___
+#### ¿Cómo se calculcula la ruta para el robot?: 
+  > Cada robot tiene como atributo la posición de la base. En la función move con caja se calcula la distancia hacia "x" y "y", si ambas distancias son cero significa que llegó al lugar. Si no, se crea una lista de prioridad llamada directions. La primera posición es dirijirse a la dirección que le quede más distancia or recorrer, l
+___
 #### Unity: 
