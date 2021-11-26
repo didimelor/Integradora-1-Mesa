@@ -38,7 +38,6 @@ class FloorTiles(Model):
         for (contents, x, y) in self.grid.coord_iter():
             new_box = Box((x, y), self)
 
-            # edtar linea 41
             if self.random.random() < density:
                 new_box.condition = "unstoraged"
                 new_box.id = _id
